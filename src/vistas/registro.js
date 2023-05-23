@@ -1,4 +1,3 @@
-import { panel } from "./panel";
 export const registro =  {
   template: `
   <div class="pt-5">
@@ -15,12 +14,7 @@ export const registro =  {
   </div>
   `,
   script: ()=>{
-    console.log('script de login');
-    document.querySelector('#enviar').addEventListener('click', (e)=>{
-      console.log('cargando');
-      document.querySelector('main').innerHTML = panel.template
-      panel.script();
-    })  
+    console.log('script de login'); 
 }
 
 }

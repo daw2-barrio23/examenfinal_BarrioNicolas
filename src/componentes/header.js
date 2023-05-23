@@ -13,31 +13,27 @@ export const header = {
             <button class="btn btn-secondary ms-2" id="login">LOGIN</button>
             <button class="btn btn-secondary ms-2" id="registro">REGISTRO</button>
           </div>
-          <div>
-            <span>administrador@fpllefia.com</span>
-            
-          </div>
         </div>
       </nav>
     </header>
     
     `,
     script: ()=>{
-      console.log('header cargado');
+      console.log('header cargado');//comprobamos por consola que carga correctamente
       document.querySelector('#panel').addEventListener('click', ()=>{
-        console.log('click enpanel')
-        document.querySelector('main').innerHTML = panel.template;
-        panel.script()
+        console.log('click en panel')//comprobamos por consola que carga correctamente
+        document.querySelector('main').innerHTML = panel.template;//seleccionamos la parte que tiene un id panel y le decimos que escuche el click, una vez lo detecta le decimos que inyecte la vista panel
+        panel.script()//sacamos tambien el script correspondiente
       });
       document.querySelector('#login').addEventListener('click', ()=>{
-        console.log('click en login')
-        document.querySelector('main').innerHTML = login.template;
-        login.script()
+        console.log('click en login')//comprobamos por consola que carga correctamente
+        document.querySelector('main').innerHTML = login.template;//seleccionamos la parte que tiene un id login y le decimos que escuche el click, una vez lo detecta le decimos que inyecte la vista login
+        login.script()//sacamos tambien el script correspondiente
       });
       document.querySelector('#registro').addEventListener('click', ()=>{
-        console.log('click en registro')
-        document.querySelector('main').innerHTML = registro.template;
-        registro.script()
+        console.log('click en registro')//comprobamos por consola que carga correctamente
+        document.querySelector('main').innerHTML = registro.template;//seleccionamos la parte que tiene un id login y le decimos que escuche el click, una vez lo detecta le decimos que inyecte la vista registro
+        registro.script()//sacamos tambien el script correspondiente
       });
     }
 }

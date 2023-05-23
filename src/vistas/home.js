@@ -1,4 +1,3 @@
-import { panel } from "./panel";
 export const home =  {
   template: `
   <div class="pt-5">
