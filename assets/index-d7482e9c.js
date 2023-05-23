@@ -1,4 +1,30 @@
-(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const e of t)if(e.type==="childList")for(const d of e.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&n(d)}).observe(document,{childList:!0,subtree:!0});function r(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerPolicy&&(e.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?e.credentials="include":t.crossOrigin==="anonymous"?e.credentials="omit":e.credentials="same-origin",e}function n(t){if(t.ep)return;t.ep=!0;const e=r(t);fetch(t.href,e)}})();const a={template:`
+(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))a(t);new MutationObserver(t=>{for(const e of t)if(e.type==="childList")for(const n of e.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&a(n)}).observe(document,{childList:!0,subtree:!0});function l(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerPolicy&&(e.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?e.credentials="include":t.crossOrigin==="anonymous"?e.credentials="omit":e.credentials="same-origin",e}function a(t){if(t.ep)return;t.ep=!0;const e=l(t);fetch(t.href,e)}})();const d={template:`
+  <div class="pt-5">
+    <h1 class="w-100 text-center">Login</h1>
+    <form action="" class="form p-4 border shadow bordered mt-5 mx-auto" style="width: 400px;">
+      <label for="email" class="mt-2 form-label">User: </label>
+      <input type="text" class="form-control" placeholder="usuario@mail.com">
+
+      <label for="pass" class="mt-2 form-label">Contraseña: </label>
+      <input type="text" class="form-control">
+
+      <input type="text" class="mt-4 w-100 btn btn-primary" value="Entrar" id="enviar">
+    </form>
+  </div>
+  `,script:()=>{console.log("script de login")}},s={template:`
+  <div class="pt-5">
+    <h1 class="w-100 text-center">Registro</h1>
+    <form action="" class="form p-4 border shadow bordered mt-5 mx-auto" style="width: 400px;">
+      <label for="email" class="mt-2 form-label">User: </label>
+      <input type="text" class="form-control" placeholder="usuario@mail.com">
+
+      <label for="pass" class="mt-2 form-label">Contraseña: </label>
+      <input type="text" class="form-control">
+
+      <input type="text" class="mt-4 w-100 btn btn-primary" value="Entrar" id="enviar">
+    </form>
+  </div>
+  `,script:()=>{console.log("script de login")}},o={template:`
     <h1>Administración de incidencias</h1>
       <h2 class="mt-5">Tickets pendientes</h2>
       <table class="table mt-4">
@@ -180,33 +206,18 @@
          
         </tbody>
       </table>
-    `,script:()=>{console.log("panel")}},l={template:`
-  <div class="pt-5">
-    <h1 class="w-100 text-center">Login</h1>
-    <form action="" class="form p-4 border shadow bordered mt-5 mx-auto" style="width: 400px;">
-      <label for="email" class="mt-2 form-label">User: </label>
-      <input type="text" class="form-control" placeholder="usuario@mail.com">
-      <label for="pass" class="mt-2 form-label">Contraseña: </label>
-      <input type="text" class="form-control">
-      <input type="text" class="mt-4 w-100 btn btn-primary" value="Entrar" id="enviar">
-    </form>
-  </div>
-  `,script:()=>{console.log("script de login"),document.querySelector("#enviar").addEventListener("click",o=>{console.log("cargando"),document.querySelector("main").innerHTML=a.template,a.script()})}},s={template:`
+    `,script:()=>{console.log("panel")}},r={template:`
     <header>
       <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand">Gestión de incidencias FPLLEFIA</a>
           <div>
-            <button class="btn btn-secondary ms-2">PANEL</button>
-            <button class="btn btn-secondary ms-2">LOGIN</button>
-            <button class="btn btn-secondary ms-2">REGISTRO</button>
-          </div>
-          <div>
-            <span>administrador@fpllefia.com</span>
-            
+            <button class="btn btn-secondary ms-2" id="panel">PANEL</button>
+            <button class="btn btn-secondary ms-2" id="login">LOGIN</button>
+            <button class="btn btn-secondary ms-2" id="registro">REGISTRO</button>
           </div>
         </div>
       </nav>
     </header>
     
-    `,script:()=>{console.log("header cargado")}};document.querySelector("header").innerHTML=s.template;s.script();document.querySelector("main").innerHTML=l.template;
+    `,script:()=>{console.log("header cargado"),document.querySelector("#panel").addEventListener("click",()=>{console.log("click en panel"),document.querySelector("main").innerHTML=o.template,o.script()}),document.querySelector("#login").addEventListener("click",()=>{console.log("click en login"),document.querySelector("main").innerHTML=d.template,d.script()}),document.querySelector("#registro").addEventListener("click",()=>{console.log("click en registro"),document.querySelector("main").innerHTML=s.template,s.script()})}};document.querySelector("header").innerHTML=r.template;r.script();
